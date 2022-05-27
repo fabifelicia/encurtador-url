@@ -27,3 +27,4 @@ Solução criada de um encurtador de URL através da plataforma da [DIO](https:/
 
 - Fabiana Barreto - [@fabifelicia](https://github.com/fabifelicia)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/fabifelicia/encurtador-url/badge)](https://www.codefactor.io/repository/github/fabifelicia/encurtador-url)
