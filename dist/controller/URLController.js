@@ -13,26 +13,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.URLController = void 0;
+const URL_1 = require("../database/model/URL");
 const shortid_1 = __importDefault(require("shortid"));
 const Constants_1 = require("../config/Constants");
 class URLController {
     shorten(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { originalUrl } = req.body;
+            const url = yield URL_1.URLModel.findOne({ originalUrl });
+            if (url) {
+                res.json(url);
+                return;
+            }
             const hash = shortid_1.default.generate();
             const shortUrl = `${Constants_1.config.API_URL}/${hash}`;
-            res.json({ originalUrl, hash, shortUrl });
+            const newUrl = yield URL_1.URLModel.create({ originalUrl, hash, shortUrl });
+            res.json(newUrl);
         });
     }
     redirect(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { hash } = req.params;
-            const url = {
-                originalUrl: "https://google.com",
-                hash: "SoDV9_CLK",
-                shortUrl: "http://localhost:5000/SoDV9_CLK"
-            };
-            res.redirect(url.originalUrl);
+            const url = yield URL_1.URLModel.findOne({ hash });
+            if (url) {
+                res.redirect(url.originalUrl);
+                return;
+            }
+            res.status(400).json({ error: 'URL not found' });
         });
     }
 }
