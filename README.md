@@ -21,7 +21,6 @@ Solução criada de um encurtador de URL através da plataforma da [DIO](https:/
 - Express
 - TypeScript 
 - MongoDB / Mongoose
-- 
 
 ## Author
 
