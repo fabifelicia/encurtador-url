@@ -14,11 +14,11 @@
   "dependencies": {
     "@typegoose/typegoose": "^9.8.1",
     "@types/mongoose": "^5.11.97",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "eslint": "^8.16.0",
+    "eslint": "^10.0.2",
     "express": "^4.22.1",
     "mongoose": "^6.13.6",
     "shortid": "^2.2.17"
